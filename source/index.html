@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="portfolio">
+            <a href="activity.html"><i class="fa fa-question-circle fa-2x"></i></a>
+        </div>
+
+        <nav>
+            <h1><a href="/">Games App</a></h1>
+        </nav>
+
+        <form autocomplete="off" onsubmit="searchGames();">
+            <div class="autocomplete">
+                <input id="searchInput" type="text" placeholder="Search Games">
+            </div>
+            <button type="submit" id="submitBtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+    </header>
+    <main id="maincontent">
+        <section>
+            <div class="filter-section">
+                <div class="filter-options">
+                    <h2>Sort By Year</h2>
+                    <select id="year-sort" name="year" onchange="updateGames()">
+                        <option value="none">None</option>
+                        <option value="asc">Ascending</option>
+                        <option value="des">Descending</option>
+                    </select>
+                </div>
+                <div class="filter-options">
+                    <h2>Filter By</h2>
+                    <div class="filter-form">
+                        <select id="genres-select" name="genre" onchange="updateGames()">
+                            <option value="all">All Genres</option>
+                        </select>
+                        <select id="publishers-select" name="publisher" onchange="updateGames()">
+                            <option value="all">All publisher</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <ul id="games-list"></ul>
+        </section>
+    </main>
+
+    <footer id="footer">
+        Copyright (c) 2019 <a href="/"><strong>Games App</strong></a> All Rights Reserved.
+    </footer>
+
+    <script src="dbhelper.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
